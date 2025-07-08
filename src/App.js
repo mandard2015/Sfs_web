@@ -1,13 +1,24 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
+import Home from './components/home';
+import About from './components/about';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="text-sm font-bold underline text-blue-600">
-          Hello Tailwind CSS!
-          I am Web dev
-        </div>
-      </header>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
