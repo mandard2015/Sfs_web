@@ -28,34 +28,35 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="bg-gradient-to-r from-black via-blue-900 to-blue-700 shadow-lg fixed left-0 w-full z-50 px-2" ref={menuRef}>
+        <nav className="bg-blue-50/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 px-2" ref={menuRef}>
+            {/* bg-gradient-to-br from-blue-900 via-blue-500 to-green-500 */}
             <div className="container mx-auto px-4 sm:px-8">
                 <div className="flex justify-between items-center py-2">
                     <div className='flex items-center'>
-                        <img src='/images/SFS academy logo.png' className='h-20 m-0 p-0' alt="SFSAcademy logo" />
+                        <img src='/images/SFS healthcare logo.png' className='h-16 m-0 p-0' alt="SFSHealthCare logo" />
                     </div>
-                    <div className="hidden text-white text-lg md:flex space-x-8">
-                        <Link to="/" className="font-bold hover:text-gray-800 ">Home</Link>
-                        <Link to="/about" className="font-bold hover:text-gray-800">Course</Link>
-                        <Link to="/resources" className="font-bold hover:text-gray-800">Resources</Link>
-                        {/* <Link to="/reviews" className="font-bold hover:text-gray-800">Reviews</Link> */}
-                        <Link to="/signin" className="font-bold hover:text-gray-800 cursor-pointer">Sign in</Link>
+                    <div className="hidden text-blue-900 text-lg font-bold md:flex space-x-8">
+                        <Link to="/" className="hover:text-blue-800 transition duration-300 ">Home</Link>
+                        <Link to="/about" className="hover:text-blue-800 transition duration-300">About</Link>
+                        <Link to="#services" className="hover:text-blue-800 transition duration-300">Services</Link>
+                        {/* <Link to="/reviews" className="hover:text-blue-800 transition duration-300">Reviews</Link> */}
+                        <Link to="/contact" className="hover:text-blue-800 transition duration-300 cursor-pointer">Contact Us</Link>
                     </div>
                     <div className="md:hidden">
-                        <button onClick={toggleMenu} className="hover:text-gray-800 focus:outline-none">
-                            <svg className="w-6 h-6 hover:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <button onClick={toggleMenu} className="hover:text-blue-800 transition duration-300 focus:outline-none">
+                            <svg className="w-6 h-6 hover:text-blue-800 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                             </svg>
                         </button>
                     </div>
                 </div>
                 {isOpen && (
-                    <div className="md:hidden text-white">
-                        <Link to="/" className="font-semibold block px-4 py-1 hover:text-gray-800" onClick={closeMenu}>Home</Link>
-                        <Link to="/about" className="font-semibold block px-4 py-1 hover:text-gray-800" onClick={closeMenu}>Course</Link>
-                        <Link to="/resources" className="font-semibold block px-4 py-1 hover:text-gray-800" onClick={closeMenu}>Resources</Link>
-                        {/* <Link to="/reviews" className="font-semibold block px-4 py-1 hover:text-gray-800" onClick={closeMenu}>Reviews</Link> */}
-                        <Link to="/signin" className="font-semibold block px-4 py-1 hover:text-gray-800" onClick={closeMenu}>Sign in</Link>
+                    <div className="md:hidden text-blue-900">
+                        <Link to="/" className="font-semibold block px-4 py-1 hover:text-blue-800 transition duration-300" onClick={closeMenu}>Home</Link>
+                        <Link to="/about" className="font-semibold block px-4 py-1 hover:text-blue-800 transition duration-300" onClick={closeMenu}>Course</Link>
+                        <Link to="/services" className="font-semibold block px-4 py-1 hover:text-blue-800 transition duration-300" onClick={closeMenu}>Resources</Link>
+                        {/* <Link to="/reviews" className="font-semibold block px-4 py-1 hover:text-blue-800 transition duration-300" onClick={closeMenu}>Reviews</Link> */}
+                        <Link to="/signin" className="font-semibold block px-4 py-1 hover:text-blue-800 transition duration-300" onClick={closeMenu}>Sign in</Link>
                     </div>
                 )}
             </div>

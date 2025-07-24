@@ -4,18 +4,23 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Home from './components/home';
 import About from './components/about';
+import Services from './components/services';
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <Home />
+        <About />
+        <Services />
+        {/* <main className="flex-grow">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/services' element={<Services />} />
           </Routes>
-        </main>
+        </main> */}
         <Footer />
       </div>
     </Router>
