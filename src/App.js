@@ -1,29 +1,38 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Home from './components/home';
 import About from './components/about';
 import Services from './components/services';
+import WhatsAppIcon from './components/whatsappIcon';
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
+    <>
+      <Helmet>
+        <title>SFS HealthCare | Home Physiotherapy & Rehabilitation in Hinjewadi, Pradhikaran, Baner, Wakad, PCMC</title>
+        <meta
+          name="description"
+          content="Get expert physiotherapy & rehabilitation at home. Book compassionate, professional care with SFS HealthCare across Hinjewadi, Baner, Wakad, Pimple Saudagar, Nigdi, Ravet & PCMC. "
+        />
+        <meta
+          name="keywords"
+          content="physiotherapy at home, physiotherapy Hinjewadi, physiotherapy Baner, physiotherapy Wakad, physiotherapy Sus, physiotherapy Pashan, physiotherapy Pimple Saudagar, home physio PCMC, rehabilitation at home"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.yourdomain.com" />
+      </Helmet>
+
+      <div className="flex flex-col bg-gradient-to-br from-blue-50 to-purple-100 min-h-screen">
         <Navbar />
-        <Home />
-        <About />
-        <Services />
-        {/* <main className="flex-grow">
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/services' element={<Services />} />
-          </Routes>
-        </main> */}
-        <Footer />
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="services"><Services /></section>
+        <section id="contact"><Footer /></section>
+        <WhatsAppIcon />
       </div>
-    </Router>
+    </>
   );
 }
 

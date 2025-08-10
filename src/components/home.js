@@ -1,188 +1,113 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { FaHome, FaHandsHelping, FaStethoscope, FaPhone, FaUserNurse } from "react-icons/fa";
+
+const whyChooseData = [
+    {
+        icon: FaHome,
+        title: "Home Physiotherapy Visits",
+        desc: "Avoid travel stress with professional physiotherapy at your home, saving time and energy.",
+    },
+    {
+        icon: FaStethoscope,
+        title: "Personalized Treatment Plans",
+        desc: "Each recovery program is designed with thorough assessment, ensuring faster and safer recovery.",
+    },
+    {
+        icon: FaHandsHelping,
+        title: "Rehabilitation & Post-Surgery Care",
+        desc: "Guided rehabilitation to help you regain strength and mobility after injury or surgery.",
+    },
+    {
+        icon: FaUserNurse,
+        title: "Advanced Therapy Techniques",
+        desc: "We use evidence-based and modern physiotherapy methods for the best results.",
+    },
+];
 
 export default function Home() {
-  const navigate = useNavigate();
+    const images = [
+        { image: "/images/physio1.webp", alttext: "Physiotherapist providing home care in Hinjewadi" },
+        { image: "/images/physio2.webp", alttext: "Physiotherapist providing home care in Baner" },
+        { image: "/images/physio3.webp", alttext: "Physiotherapist providing home care in Pimple Saudagar" },
+        { image: "/images/physio4.webp", alttext: "Physiotherapist providing home care in Nigdi" },
+        { image: "/images/pexels1.webp", alttext: "Physiotherapist providing home care in Pradhikaran" },
+        { image: "/images/og-physiotherapy-home.webp", alttext: "Physiotherapist providing home care in Ravet" },
+        { image: "/images/pexels3.webp", alttext: "Physiotherapist providing home care in Dehuroad" },
+        { image: "/images/pexels4.webp", alttext: "Physiotherapist providing home care in PCMC" },
+        { image: "/images/pexels5.webp", alttext: "Physiotherapist providing home care in Wakad" },
+    ];
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
-    "./images/physio1.jpg",
-    "./images/physio2.jpg",
-    "./images/physio3.jpg",
-    "./images/physio4.jpg",
-    "./images/pexels1.jpg",
-    "./images/pexels2.jpg",
-    "./images/pexels3.jpg",
-    "./images/pexels4.jpg",
-    "./images/pexels5.jpg",
-  ];
-  const [currentIndex, setCurrentIndex] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [images.length]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  return (
-    <div className="mt-16 min-h-screen px-16 py-20 bg-gradient-to-br from-blue-100 to-purple-100 text-gray-800 overflow-x-hidden">
-      {/* Hero Section */}
-      <div className="flex justify-between items-center mb-20">
-        <div className="w-1/2 pr-10">
-          <h1 className="text-5xl font-bold text-blue-900 mb-6">
-            Revive. Restore. Rejuvenate.
-          </h1>
-          <p className="text-xl mb-8">
-            Personalized physiotherapy solutions for a pain-free and active life.
-          </p>
-          <button
-            onClick={() => navigate("/contact")}
-            className="bg-black text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition"
-          >
-            Book an Appointment
-          </button>
-        </div>
-        <div className="w-1/2">
-          <img
-            src={images[currentIndex]}
-            alt="Clinic"
-            className="w-full h-80 rounded-2xl object-cover shadow-xl transition-all duration-500"
-          />
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      {/* <section className="my-20 w-full">
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
-          What Our Patients Say
-        </h2>
-        <div className="grid grid-cols-3 gap-8">
-          {[
-            {
-              name: "Amit Sharma",
-              review:
-                "PhysioCare helped me recover from a serious knee injury. Their care and support were excellent!",
-            },
-            {
-              name: "Riya Kulkarni",
-              review:
-                "The therapists are professional, friendly, and very knowledgeable. Highly recommended!",
-            },
-            {
-              name: "Sameer Patil",
-              review:
-                "Modern equipment and a personalized treatment plan made my recovery fast and easy.",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition"
-            >
-              <p className="text-gray-700 italic mb-4">"{item.review}"</p>
-              <h3 className="text-blue-800 font-semibold">– {item.name}</h3>
+    return (
+        <div id="home" className="mt-24 scroll-mt-24 min-h-screen px-4 sm:px-8 md:px-16 sm:pt-10">
+            {/* Hero Section */}
+            <div className="flex flex-col sm:flex-row justify-between items-center">
+                <div className="sm:w-1/2 sm:pr-10">
+                    <h1 className="text-2xl sm:text-4xl font-bold text-blue-900">
+                        SFS Healthcare - Physiotherapy & Rehabilitation at Home
+                    </h1>
+                    <p className="mt-4 text-md sm:text-xl pb-2 sm:my-8">
+                        <strong>SFS HealthCare</strong> brings expert <strong>physiotherapy and rehabilitation at home</strong>,
+                        so you can heal, recover, and move better without stepping outside.
+                        From <em>pain relief and mobility restoration</em> to <em>post-surgery recovery</em> and <em>chronic condition management</em>,
+                        we guide you every step of the way with complete <strong>care navigation</strong>.
+                        Experience faster healing, personalized treatment, and the comfort of high-quality care in your own home.
+                    </p>
+                </div>
+                <div className="w-11/12 sm:w-1/2 lg:px-6 my-6">
+                    <img
+                        src={images[currentIndex].image}
+                        alt={images[currentIndex].alttext}
+                        className="w-full h-44 sm:h-80 rounded-2xl object-cover shadow-xl transition-all duration-500"
+                    />
+                </div>
             </div>
-          ))}
-        </div>
-      </section> */}
+            <div className="flex flex-col sm:flex-row gap-3 items-center mt-2 mx-auto">
+                {/* <h2 className="text-xl sm:text-3xl font-bold text-blue-900">Give a Call</h2> */}
+                <button
+                    onClick={() => window.location.href = `tel:7841962383`}
+                    className="bg-blue-700 text-white px-5 py-2 sm:mt-0 rounded-full sm:text-lg font-semibold hover:bg-gray-800 transition flex items-center"><FaPhone className="mr-2" />
+                    Book Appointment
+                </button>
+                <a
+                    href="https://wa.me/917841962383?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20SFS%20HealthCare%20home%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition">Chat with us on Whatsapp</a>
 
-      {/* Why Choose Us Section */}
-      <section className="mb-20">
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
-          Why Choose PhysioCare?
-        </h2>
-        <div className="grid grid-cols-3 gap-10">
-          {[
-            {
-              title: "Experienced Staff",
-              desc: "Licensed physiotherapists with years of hands-on experience.",
-            },
-            {
-              title: "Personalized Care",
-              desc: "Tailored treatment plans designed for your specific needs.",
-            },
-            {
-              title: "Modern Facilities",
-              desc: "Clean, well-equipped clinic with the latest therapy tools.",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-700">{item.desc}</p>
             </div>
-          ))}
+
+            {/* Why Choose Us Section */}
+            <section className="bg-white rounded-2xl shadow-lg p-6 sm:p-10 mt-20 mb-6 sm:mb-16">
+                <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-8 text-center">
+                    Why Choose SFS HealthCare?
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    {whyChooseData.map((item, idx) => {
+                        const Icon = item.icon;
+                        return (
+                            <div
+                                key={idx}
+                                className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl shadow p-2 sm:p-6 hover:shadow-lg transition">
+                                <h3 className="flex items-center text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+                                    <Icon size={24} className="mr-4" />
+                                    {item.title}
+                                </h3>
+                                <p className="text-gray-700">{item.desc}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
         </div>
-      </section>
-
-      {/* Our Experts Section */}
-      <section className="mb-20">
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
-          Meet Our Experts
-        </h2>
-        <div className="flex gap-10">
-            <div
-              className="bg-white p-6 rounded-xl shadow text-center w-1/3"
-            >
-              <img
-                // src={""}
-                alt="Expert"
-                className="rounded-full mx-auto mb-4 w-24 h-24 object-cover"
-              />
-              <h3 className="text-lg font-bold text-blue-800">
-                Dr. Smitha Patel
-              </h3>
-              <p className="text-gray-600 text-sm">Senior Physiotherapist</p>
-            </div>
-        </div>
-      </section>
-
-      {/* 📊 Counters Section */}
-      <section className="mb-20 grid grid-cols-3 gap-10 text-center">
-        {[
-          { label: "Happy Patients", value: "1200+" },
-          { label: "Years of Experience", value: "10+" },
-          { label: "Therapists", value: "15+" },
-        ].map((stat, idx) => (
-          <div key={idx} className="bg-white p-10 rounded-xl shadow">
-            <p className="text-5xl font-bold text-purple-700">{stat.value}</p>
-            <p className="mt-2 text-gray-600 text-lg">{stat.label}</p>
-          </div>
-        ))}
-      </section>
-
-      {/* 🖼️ Gallery Preview */}
-      <section className="mb-20">
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">Gallery</h2>
-        <div className="grid grid-cols-4 gap-4">
-          {images.slice(0, 4).map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              alt={`Preview ${idx}`}
-              className="h-40 w-full object-cover rounded-xl shadow hover:scale-105 transition"
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* 📣 Final Call to Action */}
-      <section className="text-center mt-20">
-        <h2 className="text-3xl font-bold text-purple-800 mb-4">
-          Begin your recovery journey today!
-        </h2>
-        <button
-          onClick={() => navigate("/contact")}
-          className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-full shadow-lg transition"
-        >
-          Contact Us
-        </button>
-      </section>
-    </div>
-  );
+    );
 }
