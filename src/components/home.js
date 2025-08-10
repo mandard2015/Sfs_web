@@ -53,8 +53,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div className="sm:w-1/2 sm:pr-10">
                     <h1 className="text-2xl sm:text-4xl font-bold text-blue-900">
-                        SFS Healthcare - Physiotherapy & Rehabilitation at Home
+                        SFS Healthcare Pvt Ltd
                     </h1>
+                    <h2 className="text-xl sm:text-2xl font-bold text-blue-900">Home Health Care</h2>
+                    <h3 className="text-xl sm:text-2xl font-bold text-blue-900">Physiotherapy & Rehabilitation</h3>
                     <p className="mt-4 text-md sm:text-xl pb-2 sm:my-8">
                         <strong>SFS HealthCare</strong> brings expert <strong>physiotherapy and rehabilitation at home</strong>,
                         so you can heal, recover, and move better without stepping outside.
