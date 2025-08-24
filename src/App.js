@@ -21,14 +21,14 @@ function App() {
           content="physiotherapy at home, physiotherapy Hinjewadi, physiotherapy Baner, physiotherapy Wakad, physiotherapy Sus, physiotherapy Pashan, physiotherapy Pimple Saudagar, home physio PCMC, rehabilitation at home"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.yourdomain.com" />
+        <link rel="canonical" href="https://www.sfshealthcare.in" />
       </Helmet>
 
       <div className="flex flex-col bg-gradient-to-br from-blue-50 to-purple-100 min-h-screen">
         <Navbar />
-        <section id="home"><Home /></section>
-        <section id="about"><About /></section>
-        <section id="services"><Services /></section>
+        <section id="home" className='scroll-mt-24'><Home /></section>
+        <section id="about" className='scroll-mt-24 bg-gradient-to-br from-blue-700 to-purple-100'><About /></section>
+        <section id="services" className='scroll-mt-24'><Services /></section>
         <section id="contact"><Footer /></section>
         <WhatsAppIcon />
       </div>

@@ -48,7 +48,8 @@ export default function Home() {
     }, [images.length]);
 
     return (
-        <div id="home" className="mt-24 scroll-mt-24 min-h-screen px-4 sm:px-8 md:px-16 sm:pt-10">
+    <div className="min-h-screen mt-24 sm:pt-10">
+        <div className="px-4 sm:px-8 md:px-16 pb-4">
             {/* Hero Section */}
             <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div className="sm:w-1/2 sm:pr-10">
@@ -57,7 +58,7 @@ export default function Home() {
                     </h1>
                     <h2 className="text-xl sm:text-2xl font-bold text-blue-900">Home Health Care</h2>
                     <h3 className="text-xl sm:text-2xl font-bold text-blue-900">Physiotherapy & Rehabilitation</h3>
-                    <p className="mt-4 text-md sm:text-xl pb-2 sm:my-8">
+                    <p className="mt-2 text-md sm:text-xl pb-2 sm:my-8">
                         <strong>SFS HealthCare</strong> brings expert <strong>physiotherapy and rehabilitation at home</strong>,
                         so you can heal, recover, and move better without stepping outside.
                         From <em>pain relief and mobility restoration</em> to <em>post-surgery recovery</em> and <em>chronic condition management</em>,
@@ -65,7 +66,7 @@ export default function Home() {
                         Experience faster healing, personalized treatment, and the comfort of high-quality care in your own home.
                     </p>
                 </div>
-                <div className="w-11/12 sm:w-1/2 lg:px-6 my-6">
+                <div className="w-11/12 sm:w-1/2 lg:px-6 sm:my-6">
                     <img
                         src={images[currentIndex].image}
                         alt={images[currentIndex].alttext}
@@ -73,7 +74,7 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 items-center mt-2 mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 items-center mt-4 sm:mt-0 mx-auto">
                 {/* <h2 className="text-xl sm:text-3xl font-bold text-blue-900">Give a Call</h2> */}
                 <button
                     onClick={() => window.location.href = `tel:7841962383`}
@@ -85,15 +86,15 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition">Chat with us on Whatsapp</a>
-
             </div>
-
+        </div>
+        <div className='bg-gradient-to-tr from-blue-800 to-blue-50 px-4 sm:px-8 md:p-16'>
             {/* Why Choose Us Section */}
-            <section className="bg-white rounded-2xl shadow-lg p-6 sm:p-10 mt-20 mb-6 sm:mb-16">
-                <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-8 text-center">
+            <section className="bg-white rounded-2xl shadow-lg p-6 sm:p-10">
+                <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-4 sm:mb-8 text-center">
                     Why Choose SFS HealthCare?
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     {whyChooseData.map((item, idx) => {
                         const Icon = item.icon;
                         return (
@@ -110,6 +111,7 @@ export default function Home() {
                     })}
                 </div>
             </section>
+        </div>
         </div>
     );
 }
