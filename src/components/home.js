@@ -82,13 +82,13 @@ export default function Home() {
                     Book Appointment
                 </button>
                 <a
-                    href="https://wa.me/917841962383?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20SFS%20HealthCare%20home%20services"
+                    href="https://wa.me/917841962383?text=Hi%20I%20would%20like%20to%20make%20an%20enquiry%20about%20SFS%20HealthCare%20home%20services"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition">Chat with us on Whatsapp</a>
             </div>
         </div>
-        <div className='bg-gradient-to-tr from-blue-800 to-blue-50 px-4 sm:px-8 md:p-16'>
+        <div className='bg-gradient-to-tr from-blue-800 to-blue-50 p-4 sm:p-8 md:p-16'>
             {/* Why Choose Us Section */}
             <section className="bg-white rounded-2xl shadow-lg p-6 sm:p-10">
                 <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-4 sm:mb-8 text-center">

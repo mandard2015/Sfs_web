@@ -270,16 +270,16 @@ export default function Services() {
                 ))}
             </div>
 
-            <div className="rounded-lg bg-gradient-to-br from-black to-slate-400 text-center m-6 mx-20 p-12">
-                <h2 className="text-3xl font-bold text-white mb-4">
+            <div className="rounded-lg bg-gradient-to-br from-black to-slate-400 text-center mt-6 md:mx-20 p-8 sm:p-12">
+                <h2 className="text-xl sm:text-3xl font-bold text-white mb-4">
                     Ready to Begin Your Recovery Journey?
                 </h2>
-                <p className="text-lg text-gray-100 mb-6">
+                <p className="text-md sm:text-lg text-gray-100 mb-6">
                     Book your appointment with our experienced physiotherapists today!
                 </p>
                 <p
                     onClick={handleCall}
-                    className="inline-block bg-black text-white px-6 py-3 cursor-pointer rounded-full text-lg font-semibold hover:bg-gray-800 hover:shadow-black hover:shadow-lg transition"
+                    className="inline-block bg-black text-white p-2 sm:px-6 sm:py-3 cursor-pointer rounded-full sm:text-lg font-semibold hover:bg-gray-800 hover:shadow-black hover:shadow-lg transition"
                 >
                     Book Appointment
                 </p>

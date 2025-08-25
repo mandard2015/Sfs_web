@@ -48,7 +48,7 @@ const Footer = () => {
                         <a href="https://www.facebook.com/" className="hover:text-blue-800"><FaFacebook size={30} /></a>
                         <a href="sfshealthcarepvtltd@gmail.com " className="hover:text-white"><FaEnvelope size={30} /></a>
                         <a href="https://www.instagram.com/" className="hover:text-fuchsia-700"><FaInstagram size={30} /></a>
-                        <a href="https://wa.me/7841962383?text=Hii%2C%20can%20I%20get%20more%20info%20about%20"
+                        <a href="https://wa.me/7841962383?text=Hii%20Can%20I%20get%20more%20info%20about%20"
                             className="hover:text-green-600"><FaWhatsapp size={30} /></a>
                     </div>
                 </div>
